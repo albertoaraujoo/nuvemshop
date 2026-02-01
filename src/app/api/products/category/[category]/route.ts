@@ -1,10 +1,7 @@
 import { NextResponse } from 'next/server';
 import products from '@/src/products.json';
 
-export async function GET(
-  request: Request,
-  { params }: { params: Promise<{ category: string }> }
-) {
+export async function GET(request: Request, { params }: { params: Promise<{ category: string }> }) {
   const { category } = await params;
 
   const filteredProducts = products.filter(

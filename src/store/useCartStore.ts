@@ -28,9 +28,7 @@ export const useCartStore = create<CartStore>()(
           if (existingItem) {
             return {
               items: state.items.map((item) =>
-                item.id === product.id
-                  ? { ...item, quantity: item.quantity + 1 }
-                  : item
+                item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
               ),
             };
           }
@@ -67,10 +65,7 @@ export const useCartStore = create<CartStore>()(
       },
 
       getTotalPrice: () => {
-        return get().items.reduce(
-          (total, item) => total + item.price * item.quantity,
-          0
-        );
+        return get().items.reduce((total, item) => total + item.price * item.quantity, 0);
       },
     }),
     {
