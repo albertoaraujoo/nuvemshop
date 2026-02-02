@@ -19,10 +19,10 @@ export default async function Home() {
   const products = await getProducts();
 
   return (
-    <div className="mt-20 flex w-full flex-col gap-10">
+    <div className="flex w-full flex-col gap-10 ">
       {/* Hero Section */}
-      <section className="flex w-full justify-center px-4 py-8 sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-12 xl:px-16">
-        <div className="mx-auto mt-20 flex max-w-7xl flex-col gap-10">
+      <section className="flex w-full justify-center py-4 px-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-10">
           <div className="mb-8 space-y-4 md:mt-8 md:mb-12">
             <h1 className="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-3xl font-bold text-transparent sm:text-4xl md:text-5xl">
               Produtos em Destaque
