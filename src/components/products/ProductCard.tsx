@@ -59,7 +59,7 @@ export function ProductCard({ product }: ProductCardProps) {
         />
       </Link>
 
-      <div className="flex flex-1 flex-col gap-2 pt-4 pb-0">
+      <div className="flex flex-1 flex-col gap-2 pt-2 pb-0">
         <div className="flex-1 space-y-2 px-3">
           <Link href={`/products/${product.id}`}>
             <h3 className="line-clamp-1 text-base font-semibold text-white transition-colors hover:text-blue-400">
@@ -76,7 +76,7 @@ export function ProductCard({ product }: ProductCardProps) {
           </span>
         </div>
 
-        <div className="flex flex-col gap-2 border-t border-gray-800 pt-3">
+        <div className="flex flex-col gap-2 border-t border-gray-800 pt-1">
           <div>
             <p className="font-bold text-white px-4 text-lg">{formattedPrice}</p>
           </div>

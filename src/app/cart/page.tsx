@@ -22,7 +22,7 @@ export default function CartPage() {
 
   if (items.length === 0) {
     return (
-      <div className="container mx-auto max-w-4xl px-4 py-16 sm:px-6 md:px-8">
+      <div className="container mx-auto max-w-4xl px-4 py-16">
         <div className="flex min-h-[60vh] flex-col items-center justify-center gap-6 text-center">
           <ShoppingCart className="h-24 w-24 text-gray-600" />
           <div className="space-y-2">
@@ -40,7 +40,7 @@ export default function CartPage() {
   }
 
   return (
-    <div className="container mx-auto max-w-6xl px-4 py-8 sm:px-6 md:px-8 md:py-12">
+    <div className="container mx-auto max-w-6xl px-4 py-8 md:py-12">
       <div className="mb-8 flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold text-white md:text-4xl">Meu Carrinho</h1>
@@ -80,7 +80,7 @@ export default function CartPage() {
                     {/* Imagem */}
                     <Link
                       href={`/products/${item.id}`}
-                      className="relative h-24 w-24 flex-shrink-0 overflow-hidden rounded-lg bg-gray-800"
+                      className="relative h-24 w-24 shrink-0 overflow-hidden rounded-lg bg-gray-800"
                     >
                       <Image src={item.image} alt={item.name} fill className="object-cover" />
                     </Link>
