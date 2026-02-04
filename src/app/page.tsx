@@ -19,11 +19,11 @@ export default async function Home() {
   const products = await getProducts();
 
   return (
-    <div className="flex w-full flex-col gap-10 ">
+    <div className="flex w-full flex-col gap-10">
       {/* Hero Section */}
-      <section className="flex w-full justify-center py-4 px-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-10">
-          <div className="mb-8 space-y-4 md:mt-8 md:mb-12">
+      <section className="w-full">
+        <div className="mx-auto max-w-7xl px-4 py-8">
+          <div className="mb-8 space-y-4 md:mb-10">
             <h1 className="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-3xl font-bold text-transparent sm:text-4xl md:text-5xl">
               Produtos em Destaque
             </h1>
@@ -32,7 +32,7 @@ export default async function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 md:gap-6 lg:grid-cols-4 xl:grid-cols-5">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 lg:grid-cols-4 xl:grid-cols-5">
             {products.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
@@ -47,8 +47,8 @@ export default async function Home() {
       </section>
 
       {/* Info Cards Section */}
-      <section className="flex w-full justify-center bg-gray-900/30 px-4 py-12 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-12 xl:px-16">
-        <div className="mx-auto max-w-7xl">
+      <section className="w-full bg-gray-900/30">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:py-16">
           <div className="mb-8 text-center md:mb-12">
             <h2 className="text-2xl font-bold text-white sm:text-3xl md:text-4xl">
               Por que comprar com a gente?

@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ShoppingCart } from 'lucide-react';
@@ -12,9 +13,13 @@ export function Header() {
   const totalItems = useCartStore((state) => state.getTotalItems());
   const isCartPage = pathname === '/cart';
 
+  useEffect(() => {
+    useCartStore.persist.rehydrate();
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-gray-800 bg-gray-950/95 backdrop-blur supports-[backdrop-filter]:bg-gray-950/80">
-      <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:h-20 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+    <header className="sticky top-0 z-50 w-full border-b border-gray-800 bg-gray-950/95 backdrop-blur supports-backdrop-filter:bg-gray-950/80">
+      <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:h-20">
         <Link href="/" className="flex items-center">
           <div className="flex items-center gap-2 sm:gap-3">
             <div className="h-8 w-8 rounded-full bg-linear-to-br from-blue-500 via-purple-500 to-pink-500 sm:h-10 sm:w-10" />
