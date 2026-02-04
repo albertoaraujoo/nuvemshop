@@ -2,18 +2,12 @@ import { Product } from '@/src/types/product';
 import { ProductCard } from '@/src/components/products/ProductCard';
 import { InfoCard } from '@/src/components/home/InfoCard';
 import { Truck, ShieldCheck, CreditCard, Headphones } from 'lucide-react';
-import { getBaseUrl } from '@/src/lib/api';
+import products from '@/src/products.json';
 
 async function getProducts(): Promise<Product[]> {
-  const res = await fetch(`${getBaseUrl()}/api/products`, {
-    cache: 'no-store',
-  });
-
-  if (!res.ok) {
-    throw new Error('Falha ao carregar produtos');
-  }
-
-  return res.json();
+  // Importa diretamente do JSON em vez de fazer fetch
+  // Isso funciona em dev e produção sem problemas de URL
+  return products as Product[];
 }
 
 export default async function Home() {

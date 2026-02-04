@@ -1,26 +1,15 @@
 import { Product } from '@/src/types/product';
 import { ProductCard } from '@/src/components/products/ProductCard';
 import { SearchFilter } from '@/src/components/products/SearchFilter';
-import { getBaseUrl } from '@/src/lib/api';
+import products from '@/src/products.json';
 
 // Forçar renderização dinâmica para processar searchParams corretamente
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
 async function getProducts(): Promise<Product[]> {
-  try {
-    const res = await fetch(`${getBaseUrl()}/api/products`, {
-      cache: 'no-store',
-    });
-
-    if (!res.ok) {
-      throw new Error('Falha ao carregar produtos');
-    }
-
-    return res.json();
-  } catch {
-    return [];
-  }
+  // Importa diretamente do JSON em vez de fazer fetch
+  return products as Product[];
 }
 
 interface ProductsPageProps {
