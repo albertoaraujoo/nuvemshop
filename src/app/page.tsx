@@ -2,9 +2,10 @@ import { Product } from '@/src/types/product';
 import { ProductCard } from '@/src/components/products/ProductCard';
 import { InfoCard } from '@/src/components/home/InfoCard';
 import { Truck, ShieldCheck, CreditCard, Headphones } from 'lucide-react';
+import { getBaseUrl } from '@/src/lib/api';
 
 async function getProducts(): Promise<Product[]> {
-  const res = await fetch('http://localhost:3000/api/products', {
+  const res = await fetch(`${getBaseUrl()}/api/products`, {
     cache: 'no-store',
   });
 

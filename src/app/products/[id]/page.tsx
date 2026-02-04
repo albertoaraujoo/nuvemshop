@@ -4,10 +4,11 @@ import { Truck, ShieldCheck, Package, CreditCard, ArrowLeft } from 'lucide-react
 import Link from 'next/link';
 import { Product } from '@/src/types/product';
 import { AddToCartButton } from '@/src/components/products/AddToCartButton';
+import { getBaseUrl } from '@/src/lib/api';
 
 async function getProduct(id: string): Promise<Product | null> {
   try {
-    const res = await fetch(`http://localhost:3000/api/products/${id}`, {
+    const res = await fetch(`${getBaseUrl()}/api/products/${id}`, {
       cache: 'no-store',
     });
 

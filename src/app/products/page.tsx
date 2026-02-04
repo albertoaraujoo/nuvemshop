@@ -1,6 +1,7 @@
 import { Product } from '@/src/types/product';
 import { ProductCard } from '@/src/components/products/ProductCard';
 import { SearchFilter } from '@/src/components/products/SearchFilter';
+import { getBaseUrl } from '@/src/lib/api';
 
 // Forçar renderização dinâmica para processar searchParams corretamente
 export const dynamic = 'force-dynamic';
@@ -8,7 +9,7 @@ export const revalidate = 0;
 
 async function getProducts(): Promise<Product[]> {
   try {
-    const res = await fetch('http://localhost:3000/api/products', {
+    const res = await fetch(`${getBaseUrl()}/api/products`, {
       cache: 'no-store',
     });
 
