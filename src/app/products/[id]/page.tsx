@@ -4,22 +4,12 @@ import { Truck, ShieldCheck, Package, CreditCard, ArrowLeft } from 'lucide-react
 import Link from 'next/link';
 import { Product } from '@/src/types/product';
 import { AddToCartButton } from '@/src/components/products/AddToCartButton';
-import { getBaseUrl } from '@/src/lib/api';
+import products from '@/src/products.json';
 
 async function getProduct(id: string): Promise<Product | null> {
-  try {
-    const res = await fetch(`${getBaseUrl()}/api/products/${id}`, {
-      cache: 'no-store',
-    });
-
-    if (!res.ok) {
-      return null;
-    }
-
-    return res.json();
-  } catch {
-    return null;
-  }
+  // Busca diretamente no array importado do JSON
+  const product = products.find((p) => p.id === parseInt(id));
+  return product ? (product as Product) : null;
 }
 
 interface ProductPageProps {
