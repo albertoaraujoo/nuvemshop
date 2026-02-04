@@ -10,7 +10,7 @@
 
 Um mini e-commerce moderno e funcional desenvolvido como desafio técnico, focado em produtos tech para desenvolvedores.
 
-[🚀 Ver Demo](#) • [📝 Documentação](#índice)
+[🚀 Ver Demo](https://nuvemshop-alpha.vercel.app/) • [📝 Documentação](#índice)
 
 </div>
 
@@ -878,9 +878,9 @@ Todas as decisões foram tomadas com foco em **simplicidade, performance e manut
 
 ## 🚀 Deploy
 
-O projeto está implantado na **Vercel** (ou outra plataforma de sua escolha).
+O projeto está implantado na **Vercel** e acessível publicamente.
 
-🔗 **Link do Deploy**: [https://seu-deploy.vercel.app](#)
+🔗 **Link do Deploy**: [https://nuvemshop-alpha.vercel.app/](https://nuvemshop-alpha.vercel.app/)
 
 ### Como fazer deploy na Vercel
 
